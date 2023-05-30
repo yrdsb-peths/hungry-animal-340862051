@@ -21,7 +21,17 @@ public class MyWorld extends World
         Frog frog = new Frog();
         addObject(frog, 300, 200);
         
+        createFly();
+    }
+    
+    /**
+     * Create a new apple at random location at top of screen
+     */
+    public void createFly()
+    {
         Fly fly = new Fly();
-        addObject(fly, 300, 0);
+        int x = Greenfoot.getRandomNumber(600);
+        int y = 0;
+        addObject(fly, x, y);
     }
 }
