@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Frog extends Actor
 {
+    GreenfootSound frogSound = new GreenfootSound("Frog-sound.mp3");
     /**
      * Act - do whatever the Frog wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -39,6 +40,7 @@ public class Frog extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.createFly();
             world.increaseScore();
+            frogSound.play();
         }
     }
 }
