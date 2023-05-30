@@ -81,7 +81,7 @@ public class Frog extends Actor
             facing = "right";
         }
         
-        // Remove fly if frog eats it
+        // Remove fly/snake if frog eats it
         eat();
         
         // Animate the frog
@@ -89,7 +89,7 @@ public class Frog extends Actor
     }
     
     /**
-     * Eat the fly and spawn new fly if fly is eaten
+     * Eat the fly/snake and spawns a new fly/snake
      */
     public void eat()
     {
@@ -99,6 +99,14 @@ public class Frog extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.createFly();
             world.increaseScore();
+            frogSound.play();
+        }
+        if(isTouching(Snake.class))
+        {
+            removeTouching(Snake.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.createSnake();
+            world.decreaseScore();
             frogSound.play();
         }
     }

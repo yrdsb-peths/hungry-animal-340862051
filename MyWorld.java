@@ -17,7 +17,7 @@ public class MyWorld extends World
      */
     public MyWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Create a new world with 600x325 cells with a cell size of 1x1 pixels.
         super(600, 325, 1, false);
         
         // Create the frog object
@@ -30,6 +30,7 @@ public class MyWorld extends World
         
         
         createFly();
+        createSnake();
     }
     
     /**
@@ -49,7 +50,15 @@ public class MyWorld extends World
         scoreLabel.setValue(score);
     }
     /**
-     * Create a new apple at random location at top of screen
+     * Decrease score
+     */
+    public void decreaseScore()
+    {
+        score--;
+        scoreLabel.setValue(score);
+    }
+    /**
+     * Create a new fly at random location at top of screen
      */
     public void createFly()
     {
@@ -57,5 +66,15 @@ public class MyWorld extends World
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
         addObject(fly, x, y);
+    }
+    /**
+     * Create a new snake at random location at top of screen
+     */
+    public void createSnake()
+    {
+        Snake snake = new Snake();
+        int x = Greenfoot.getRandomNumber(600);
+        int y = 0;
+        addObject(snake, x, y);
     }
 }

@@ -6,16 +6,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author  Jonathan 
  * @version v1
  */
-public class Fly extends Actor
+public class Snake extends Actor
 {
     /**
-     * Act - do whatever the Fly wants to do. This method is called whenever
+     * Act - do whatever the Snake wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
         // Add your action code here.
-        setRotation(90);
         setLocation(getX(), getY() + 1);
         
         // Remove fly and draw game over when fly hits the floor
@@ -23,7 +22,7 @@ public class Fly extends Actor
         if(getY() >= world.getHeight())
         {
             world.removeObject(this);
-            world.createFly();
+            world.createSnake();
         }
     }
 }
