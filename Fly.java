@@ -15,6 +15,7 @@ public class Fly extends Actor
     public void act()
     {
         // Add your action code here.
+        setRotation(90);
         setLocation(getX(), getY() + 1);
     }
 }
