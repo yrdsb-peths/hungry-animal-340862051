@@ -25,6 +25,19 @@ public class Frog extends Actor
         }
         
         // Remove fly if frog eats it
-        removeTouching(Fly.class);
+        eat();
+    }
+    
+    /**
+     * Eat the fly and spawn new fly if fly is eaten
+     */
+    public void eat()
+    {
+        if(isTouching(Fly.class))
+        {
+            removeTouching(Fly.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.createFly();
+        }
     }
 }
