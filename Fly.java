@@ -17,5 +17,13 @@ public class Fly extends Actor
         // Add your action code here.
         setRotation(90);
         setLocation(getX(), getY() + 1);
+        
+        // Remove fly and draw game over when fly hits the floor
+        MyWorld world = (MyWorld) getWorld();
+        if(getY() >= world.getHeight())
+        {
+            world.gameOver();
+            world.removeObject(this);
+        }
     }
 }

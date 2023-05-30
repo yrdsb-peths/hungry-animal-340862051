@@ -38,6 +38,7 @@ public class Frog extends Actor
             removeTouching(Fly.class);
             MyWorld world = (MyWorld) getWorld();
             world.createFly();
+            world.increaseScore();
         }
     }
 }
