@@ -109,5 +109,6 @@ public class Frog extends Actor
             world.decreaseScore();
             frogSound.play();
         }
+        
     }
 }

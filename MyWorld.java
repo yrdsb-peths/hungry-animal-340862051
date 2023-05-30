@@ -10,7 +10,7 @@ public class MyWorld extends World
 {
     public int score = 0;
     Label scoreLabel;
-    
+
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -39,7 +39,8 @@ public class MyWorld extends World
     public void gameOver()
     {
         Label gameOverLabel = new Label("Game over ", 100);
-        addObject(gameOverLabel, 300, 200);
+        addObject(gameOverLabel, 300, 150);
+        
     }
     /**
      * Increase score
@@ -56,6 +57,7 @@ public class MyWorld extends World
     {
         score--;
         scoreLabel.setValue(score);
+        
     }
     /**
      * Create a new fly at random location at top of screen
